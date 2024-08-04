@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/devmor-j/basic-api/handlers"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -15,5 +16,9 @@ func main() {
 
 	app.Get("/healthcheck", healthcheckHandler)
 
+	app.Get("/products", handlers.GetAllProducts)
+	app.Post("/products", handlers.CreateProduct)
+
 	log.Fatal(app.Listen(":3000"))
+
 }

@@ -8,9 +8,15 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+type Collection string
+
+const (
+	ProductsCollection Collection = "products"
+)
+
 const (
 	dburi  = "mongodb://localhost:27017"
-	dbname = "basic-api"
+	DBname = "basic-api"
 )
 
 var (
